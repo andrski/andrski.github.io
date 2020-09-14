@@ -1,0 +1,83 @@
+﻿.fon {
+    background: #414A4C;
+    padding: 10px;
+}
+.backgSizeKE{
+    width:60%;
+}
+.backgSizePS{
+    width:80%;
+}
+.backgSizeContact{
+    width:30%;
+}
+img {
+    float: right; /* Выравнивание по правому краю */
+    margin: 0 0 10px 40px; /* Отступы вокруг */
+}
+.footer {
+    position:fixed;
+    padding: 2px; /* Поля вокруг текста */
+    background: #40E0D0; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+}
+.textHead, .textDescribe{
+    text-align: center;
+}
+ .page-footer {
+    background-color: #39A78E;
+    color: #fff;
+    font-size: 1rem;
+    height: 7rem;
+}
+.contact{
+    color: indianred;
+}
+.profsum, .keyexp {
+    color: #45B1E8;
+}
+
+.techexp1 {
+    float: left;
+    }
+.techexp2, .edu{
+    float: right;
+}
+table {
+    background-color: #B284BE;
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+}
+td, th {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+}
+ 
+ #likeBut{
+     margin-bottom:50px;
+     min-height:65vh;
+ }
+.tdColor {
+    color: #0048BA;
+}
+.button {
+    background: -moz-linear-gradient(#00BBD6, #EBFFFF);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+    padding: 3px 7px;
+    color: #333;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+.contactName {
+    font-size: 110%;
+    color: #0048BA;
+}
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+

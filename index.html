@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Andrey Khodzin CV</title>
+
+    
+    <link href="CSS/style.css" rel="stylesheet" type="text/css">
+</head>
+<body background="images/photo_Code.jpg">
+    <div class="img">
+        <img src="images/Me.jpg" width="120" alt="AndreyKhodzin" />
+    </div>
+    <div>
+        <section class="textHead">
+            <h2><font size="10" color="#009000">Andrei Khodzin</font></h2>
+        </section>
+        <section size="10" class="textDescribe">
+            <h4><font color="#E8000D" face="sans-serif">WEB Developer (Frontend, Backend)</font></h4>
+        </section>
+    </div>
+
+
+
+
+
+    <!-- We will put our React component inside this div. -->
+    <div id="likeBut" class="clearfix"></div>
+    <div id="footer"></div>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Load our React component. -->
+   
+    <script type="text/babel">
+
+        class LikeButton extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    pressed: 1,
+                };
+            }
+
+            professionalSummary = () => { //USE ONLY!!!! ARrow function
+                this.setState((state) => {
+                    return {
+                        pressed: 1,
+                    };
+                });
+            }
+
+            keyExpertise = () => { //USE ONLY!!!! ARrow function
+                this.setState((state) => {
+                    return {
+                        pressed: 2,
+                    };
+                });
+            }
+
+            technicalExpertise = () => { //USE ONLY!!!! ARrow function
+                this.setState((state) => {
+                    return {
+                        pressed: 3,
+                    };
+                });
+            }
+
+            education = () => { //USE ONLY!!!! ARrow function
+                this.setState((state) => {
+                    return {
+                        pressed: 4,
+                    };
+                });
+            }
+
+
+            contactInfo = () => { //USE ONLY!!!! ARrow function
+                this.setState((state) => {
+                    return {
+                        pressed: 5,
+                    };
+                });
+            }
+
+            renderProfessionalSummary() {
+                return (
+                    <div>
+                        <button className="button" onClick={this.professionalSummary}>Summary</button>
+                        <button className="button" onClick={this.keyExpertise}>Key Expertise</button>
+                        <button className="button" onClick={this.technicalExpertise}>Technical Expertise</button>
+                        <button className="button" onClick={this.education}>Education</button>
+                        <button className="button" onClick={this.contactInfo}>Personal Information & Contacts</button>
+                        <ProfessionalSummary />
+                    </div>
+                )
+            }
+
+            renderKeyExpertise() {
+                return (
+                    <div>
+                        <button className="button" onClick={this.professionalSummary}>Summary</button>
+                        <button className="button" onClick={this.keyExpertise}>Key Expertise</button>
+                        <button className="button" onClick={this.technicalExpertise}>Technical Expertise</button>
+                        <button className="button" onClick={this.education}>Education</button>
+                        <button className="button" onClick={this.contactInfo}>Personal Information & Contacts</button>
+                        <KeyExpertise />
+                    </div>
+                )
+            }
+
+            renderTechnicalExpertise() {
+                return (
+                    <div>
+                        <button className="button" onClick={this.professionalSummary}>Summary</button>
+                        <button className="button" onClick={this.keyExpertise}>Key Expertise</button>
+                        <button className="button" onClick={this.technicalExpertise}>Technical Expertise</button>
+                        <button className="button" onClick={this.education}>Education</button>
+                        <button className="button" onClick={this.contactInfo}>Personal Information & Contacts</button>
+                        <TechnicalExpertise />
+                    </div>
+                )
+            }
+
+            renderEducation() {
+                return (
+                    <div>
+                        <button className="button" onClick={this.professionalSummary}>Summary</button>
+                        <button className="button" onClick={this.keyExpertise}>Key Expertise</button>
+                        <button className="button" onClick={this.technicalExpertise}>Technical Expertise</button>
+                        <button className="button" onClick={this.education}>Education</button>
+                        <button className="button" onClick={this.contactInfo}>Personal Information & Contacts</button>
+                        <Education />
+                    </div>
+                )
+            }
+
+            renderContact() {
+                return (
+                    <div>
+                        <button className="button" onClick={this.professionalSummary}>Summary</button>
+                        <button className="button" onClick={this.keyExpertise}>Key Expertise</button>
+                        <button className="button" onClick={this.technicalExpertise}>Technical Expertise</button>
+                        <button className="button" onClick={this.education}>Education</button>
+                        <button className="button" onClick={this.contactInfo}>Personal Information & Contacts</button>
+                        <Contact />
+                    </div>
+                )
+            }
+
+            // 1 prof summary, , 2 keyExpertise, 3 5 renderContact
+            render() {
+
+                switch (this.state.pressed) {
+                    case 1:
+                        return this.renderProfessionalSummary();
+                        break;
+                    case 2:
+                        return this.renderKeyExpertise();
+                        break;
+                    case 3:
+                        return this.renderTechnicalExpertise();
+                        break;
+                    case 4:
+                        return this.renderEducation();
+                        break;
+                    case 5:
+                        return this.renderContact();
+                        break;
+                }
+
+
+            }
+        }
+
+        class ProfessionalSummary extends React.Component {
+            render() {
+                return (
+                    <div className="profsum fon backgSizePS">
+                        <h3>
+                            JS  developer with little experience in real projects.
+                            l studied native JS, HTML5, CSS, frameworks(React, Vue), Node.js(express).
+                            I finished JS, Node.js IBA courses.
+                            I’m familiar with git, docker, broserify, webpack.
+                            Interested in new IT technologies and other BestPractise things.
+                            I want find a stable job in an international dynamically developing
+                            company in order to apply knowledge and skills for the benefit of the team
+                            and the company. I am cheerful and very responsible person.
+                            I can easily adapt to any conditions and i am fast learner.
+                            I like to communicate with new people, like to read and otherwise develop.
+
+                        </h3>
+                    </div>
+                )
+            }
+        }
+
+        class KeyExpertise extends React.Component {
+            render() {
+                return (
+                    <div className="keyexp fon backgSizeKE">
+                        <ul typeof="circle">
+                            <li>Experience in JS, Angular, React.js, Vue.js</li>
+                            <li>Strong knowledge patterns, and best practices</li>
+                            <li>Significant experience with Git, Github</li>
+                            <li>Experience with Trello, JIRA</li>
+                            <li>Experience with Agile Methodologies</li>
+                            <li>Cohesive team worker, having strong analytical, problem solving and interpersonal skills</li>
+                            <li>I think the opinion of one person is subjective, objective opinion is the opinion of a group of people, based on which I make decisions</li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+
+        class TechnicalExpertise extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <div className="techexp1">
+                            <table width="400" border="1">
+                                <tbody>
+                                    <tr><td> Basic </td><td>[Beginner with technical degree and practical experience]</td></tr>
+                                    <tr><td> Intermediate </td><td>[At least 1-2 year of practical experience]</td></tr>
+                                    <tr><td> Advanced	 </td><td>[Deep knowledge based on significant practical experience]</td></tr>
+                                    <tr><td> Expert	 </td><td>[Outstanding knowledge, at least 5 years of practical experience]</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className="techexp2">
+                            <table width="350" border="1">
+                                <caption>Technical Expertise</caption>
+                                <tbody>
+                                    <tr><td className="tdColor"> <b>Technology</b> </td><td className="tdColor"><b>Proficiency</b></td></tr>
+                                    <tr><td className="tdColor"><b>Programming languages</b> </td><td></td></tr>
+                                    <tr><td>JavaScript </td><td>Advanced</td></tr>
+                                    <tr><td> TypeScript</td><td>Basic</td></tr>
+                                    <tr><td className="tdColor"> <b>Front end technologies</b> </td><td></td></tr>
+                                    <tr><td> Vue </td><td>Intermediate</td></tr>
+                                    <tr><td> React </td><td>Intermediate</td></tr>
+                                    <tr><td> Angular </td><td>Basic</td></tr>
+                                    <tr><td> Jquery</td><td>Intermediate</td></tr>
+                                    <tr><td> WebSockets </td><td>Intermediate</td></tr>
+                                    <tr><td> CSS </td><td>Advanced</td></tr>
+                                    <tr><td> HTML </td><td>Advanced</td></tr>
+                                    <tr><td> Bootstrap </td><td>Intermediate</td></tr>
+                                    <tr><td> Materialize </td><td>Intermediate</td></tr>
+                                    <tr><td className="tdColor"> <b>Back end technologies</b> </td><td></td></tr>
+                                    <tr><td> Node.js (Express) </td><td>Intermediate</td></tr>
+                                    <tr><td> MongoDB </td><td>Intermediate</td></tr>
+                                    <tr><td className="tdColor"> <b>Tools, Libraries, ID</b>E </td><td></td></tr>
+                                    <tr><td> Webpack</td><td>Intermediate</td></tr>
+                                    <tr><td> VisualCode </td><td>Advanced</td></tr>
+                                    <tr><td> npm </td><td>Advanced</td></tr>
+                                    <tr><td className="tdColor"> <b>Test Tools</b> </td><td></td></tr>
+                                    <tr><td> JSLint/JSHint</td><td>Intermediate</td></tr>
+                                    <tr><td> Jest/Mocha </td><td>Intermediate</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+        class Education extends React.Component {
+            render() {
+                return (
+                    <div className="edu">
+
+                        <table width="400" border="1">
+                            <caption>Languages</caption>
+                            <tbody>
+                                <tr><td className="tdColor"> English</td><td></td></tr>
+                                <tr><td> written</td><td>Intermediate</td></tr>
+                                <tr><td> spoken	 </td><td>Intermediate</td></tr>
+                                <tr><td className="tdColor"> Russion</td><td></td></tr>
+                                <tr><td> written</td><td>Mastery</td></tr>
+                                <tr><td> spoken	 </td><td>Mastery</td></tr>
+                                <tr><td className="tdColor"> Belarussion</td><td></td></tr>
+                                <tr><td> written</td><td>Mastery</td></tr>
+                                <tr><td> spoken	 </td><td>Mastery</td></tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                        <table width="400" border="1">
+                            <tbody>
+                                <tr><td> Date </td><td>August 2007 – june 2012</td></tr>
+                                <tr><td> Organization </td><td>Belarusion State University of physical culture and sport</td></tr>
+                                <tr><td> Qualification	 </td><td>Higher education</td></tr>
+                                <tr><td> Major </td><td>coach cross – country ski</td></tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                        <table width="400" border="1">
+                            <tbody>
+                                <tr><td> Date </td><td>August2001 – july 2006</td></tr>
+                                <tr><td> Organization </td><td>Military Academy RB</td></tr>
+                                <tr><td> Qualification	 </td><td>Higher education</td></tr>
+                                <tr><td> Major </td><td>Means of communication</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                )
+            }
+        }
+
+        class Contact extends React.Component {
+            render() {
+                return (
+                    <div className="fon backgSizeContact">
+
+                        <section>
+                            <h3>Personal Information:</h3>
+                            <font className="contactName">Date of birth:</font>	<p className="contact">Dec 04, 1983, Residence	Belarus</p>
+                            <font className="contactName">Location:</font>	<p className="contact">Minsk, Belarus</p>
+
+                            <h3>Contact info:</h3>
+                            <font className="contactName">email:</font> <p className="contact">andrski2009@gmail.com</p>
+                            <font className="contactName">Skype:</font> <p className="contact">andrewkhodin</p>
+                            <font className="contactName"><a href="https://www.linkedin.com/in/andrey-khodzin-b107621b1" target="_blank">LinkedIn</a></font>
+                        </section>
+                    </div>
+                )
+            }
+        }
+
+        class Footer extends React.Component {
+            render() {
+                return (
+                    <div className="">
+                        <footer className="page-footer">
+                            <div className="container">
+                                <p>
+                                    made by React.js
+                        </p>
+                                <address>
+                                    Republick Of Belarus<br />
+                            Minsk<br />
+                            Uruch'e
+                        </address>
+                            </div>
+                        </footer>
+                    </div>
+                )
+            }
+        }
+
+        const app = document.querySelector('#likeBut');
+        const footer = document.querySelector('#footer');
+        ReactDOM.render(
+            <LikeButton />, app);
+        ReactDOM.render(
+            <Footer />, footer);
+    </script>
+
+</body>
+</html>
