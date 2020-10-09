@@ -1,0 +1,45 @@
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LargeSolutions</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app">
+        <div class="center-align">
+            <div class="row" style="margin-top: 70px; margin-left: 30%;">
+                <div class="input-field col s6 ">
+                  <input value="" id="first_name2" type="text" class="validate" placeholder="inter here"  @input="inputValue = $event.target.value">
+                  <label class="active" for="first_name2">Enter length ore subStr</label>
+                </div>
+              </div>    
+            
+              <label for="indeterminate-checkbox">
+                <input id="indeterminate-checkbox" type="checkbox" v-model="checked" />
+                <span>Search register</span>
+              </label>
+                       
+            <button class="waves-effect waves-light btn-small " v-on:click="funcLength" >Length</button>
+            <button class="waves-effect waves-light btn-small " v-on:click="funcUnderStr" >Symbols</button>
+            
+            <p v-for="(mes, ind) in message">{{mes}}</p>
+          
+            <!-- <div class = "strings" v-if="checked">
+                <p v-for = "(str, ind) in strings">{{ind + 1}} - {{str | lowerCase}}</p>
+            </div>
+            <div class = "strings" v-else>
+                <p v-for="(str, ind) in strings" >{{ind+1}}-{{str | lengthStr}}</p>
+            </div> -->
+           
+            <!-- <app-strings></app-strings> -->
+        </div>
+    </div>
+   
+    <script src="./main.js"></script>
+
+</body>
+</html>
