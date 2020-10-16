@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PWA App</title>
+    <meta name="description" content="Test Super Cool PWA">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#948b6e">
+    <link rel="icon" type="image/png" href="./images/icons/icon-128x128.png" />
+    <link rel="apple-touch-icon" href="./images/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#948b6e">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="./about.html">About</a>
+    </nav>
+    <button
+    id="btnInstall"
+    disabled
+    style="position: absolute; top: 23px; right: 16px; z-index: 1;"
+        >Install PWA For Prod</button>
+</header>
+
+    <base href="wanaka-tree.jpg">
+<div id="carousel">
+  <figure id="spinner">
+    <img src="./img/paradise.jpg" alt="some image"/>
+    <img src="./img/wanaka-tree.jpg" alt="some image"/>
+    <img src="./img/pink-milford-sound.jpg" alt="some image"/>
+    <img src="./img/lake-tecapo.jpg" alt="some image"/>
+    <img src="./img/tecapo.jpg" alt="some image"/>
+    <img src="./img/milky-blue-lagoon.jpg" alt="some image"/>
+    <img src="./img/still-lake.jpg" alt="some image"/>
+    <img src="./img/morakai.jpg" alt="some image"/>
+  </figure>
+</div>
+<span style="float:left" class="ss-icon" onclick="galleryspin('-')">&lt;</span>
+<span style="float:right" class="ss-icon" onclick="galleryspin('')">&gt;</span>
+
+<footer>
+    <small><a href="https://andrski.github.io" target="_blank" rel="noreferrer">my CV in github</a></small>
+</footer>
+<script> // for slider
+    var angle = 0;
+function galleryspin(sign) { 
+spinner = document.querySelector("#spinner");
+if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+}
+</script>
+<script src="./js/app.js"></script>
+<script src="./js/main.js"></script>
+<script>
+  window.addEventListener('beforeinstallprompt', event => {
+      console.log('beforeinstallprompt event was fired');
+
+      let btnInstall = document.querySelector('#btnInstall');
+
+      // Prevent Chrome <= 67 from automatically showing the prompt
+      event.preventDefault();
+
+      // Stash the event so it can be triggered later.
+      this.installPromptEvent = event;
+
+      // Update the install UI to notify the user app can be installed
+     // btnInstall.disabled = false;
+    });
+
+   let btnInstall = document.querySelector('#btnInstall');
+
+    btnInstall.addEventListener('click', () => {
+      // Update the install UI to remove the install button
+      btnInstall.disabled = true;
+
+      // Show the modal add to home screen dialog
+      installPromptEvent.prompt();
+
+      // Wait for the user to respond to the prompt
+      installPromptEvent.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        // Clear the saved prompt since it can't be used again
+        installPromptEvent = null;
+      });
+    });
+</script>
+</body>
+</html>
